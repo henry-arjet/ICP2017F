@@ -1,2 +1,3 @@
-# This is my header
-## Sub header
+# ICP 2017F
+## Fall 2017 - Introduction to Computer Programing
+
