@@ -9,4 +9,4 @@ ICP2017F - Introduction to Computer Programming (Fall 2017)
 **Level:** Undergraduate - Freshman(1st year)  
 **ICP Class Position:** Student  
 **Course Webpage:** http://www.shahmoradi.org/ICP2017F/  
-**Photo:** ![photo of me](../images/selfie.png "Bad selfie taken in class")  
+**Photo:** ![photo of me](../images/selfie.jpg "Bad selfie taken in class")
