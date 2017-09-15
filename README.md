@@ -27,7 +27,7 @@ This directory contains all my exam submissions, each of which is a folder prope
 
 For questions and troubleshooting, please contact:
 
-Henry Arjet
+Henry Arjet  
 Henry.Arjet@UTexas.edu
 
 >All you need in this life is ignorance and confidence, and then success is sure.  
