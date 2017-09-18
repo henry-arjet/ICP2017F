@@ -204,20 +204,29 @@ If you are sure you want to delete it, run 'git branch -D test1'.
 
 (P) Now, switch back to master branch. Now, try deleting branch test1, while on master branch. What message do you get from Git? List all the existing branches using git branch command.
 ```bash
+$ git branch -d test1
+Deleted branch test1 (was 8d64969).
+$ git branch
+  create
+* master
+  test2
 ```
 
 
 
 
 (Q) Why is there such a difference in Git messages between when you tried deleting test1 branch from test2 branch, and when you tried deleting test1 branch from master branch?
-```bash
-```
 
+Because test1 was split off from master, meaning that cutting it back from there is no problem, whereas trying to delete it from test 2 is reaching across to cut something off, which could cause real issues.
 
 
 
 (R) Now checkout test2 branch. While on test2, try to delete branch test2. What error/message do you get?
 ```bash
+$ git checkout test2
+Switched to branch 'test2'
+$ git branch -d test2
+error: Cannot delete branch 'test2' checked out at 'C:/Users/Henry/git/ICP2017F'
 ```
 
 
@@ -225,6 +234,12 @@ If you are sure you want to delete it, run 'git branch -D test1'.
 
 (S) Switch back to master and delete test2 branch. List all your project branches by the appropriate Git command.
 ```bash
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+$ git branch -d test2
+Deleted branch test2 (was a133803).
 ```
 
 
@@ -232,6 +247,22 @@ If you are sure you want to delete it, run 'git branch -D test1'.
 
 (T) Stage and commit all the changes (including the file test.txt) to your project’s master branch. Now push it all to the remote repository by Wednesday Feb 15 2017, 9:00 a.m. CDT.
 ```bash
+$ git add -A
+$ git commit -am "final commit in HW 1"
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+$ git push
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 750 bytes | 250.00 KiB/s, done.
+Total 9 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+To github.com:henry-arjet/ICP2017F.git
+   a2eb595..dc39829  master -> master
 ```
 
 
