@@ -1,0 +1,3 @@
+(3)
+
+gcf refers to the current figure, and gca to the current active plot. The difference between these is that a plot is one specific relation between values (e.g. x and sinx) whereas a figure is what holds the plot, or multiple plots. Changing values of the plot with gca would include things related directly to that specific plot, such as line thickness, whereas with gcf you can change things such as the legend and the lable of the axies.

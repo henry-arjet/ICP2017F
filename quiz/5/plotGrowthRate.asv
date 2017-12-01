@@ -1,0 +1,2 @@
+Table = readtable('chain.txt');
+plot (table(1),table(3)

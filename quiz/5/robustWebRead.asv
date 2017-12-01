@@ -1,0 +1,5 @@
+function out = robustWebRead(inp)
+    try
+        disp('Reading data from the web address...');
+        data = webread(inp);
+        
