@@ -1,5 +1,5 @@
 clear all
-load('cells.mat') %in form cells(x,y, z, t) = value
+load('../data/cells.mat') %in form cells(x,y, z, t) = value
 time=[0,10,12,14,16,18,20,22];
 errors = zeros(8, 1); %An array of errors for each day, matching the above time array. Created in the for loops below
                 ...The reason it is 8 is to have a 0 value for time = zero
@@ -24,7 +24,21 @@ for t = 1:length(time)-1 %cycles through days, but only 10:22 so seven values. U
     errors(t+1) = errorsAtDay*10.^(-7).*(.5); %like before, puts it into workable numbers
     ...Also divides by two to counter the doubling of errorbar()
 end
-errorbar(time, totals, errors);
-fig = gcf;
-fig.XLabel.String = 'Time [ days ]'; % set X axis label
-fig.YLabel.String = 'Tumor Cell Count'; % set Y axis label
+ax = axes(); 
+e = errorbar(time, totals, errors);
+e.Color = [0 0 1];
+e.LineWidth = 4.5;
+e.Marker = 'o';
+ax.XLabel.String = 'Time [ days ]'; % set X axis label
+ax.XLabel.FontSize = 13;
+ax.YLabel.String = 'Tumor Cell Count'; % set Y axis label
+ax.YLabel.FontSize = 13;
+ax.Title.String = "Gompertzian Fit to Rat's Brain Tumor Growth";
+ax.Title.FontSize = 12.5;
+ldg = legend('Experimental Data');
+ldg.Location = 'northwest';
+a = annotation('textbox', [.12 .885, .5, .1]);
+a.String = '×10^{7}';
+a.LineStyle = 'none';
+a.FontSize = 11;
+saveas(gcf, '../results/ErrorBars.png');
